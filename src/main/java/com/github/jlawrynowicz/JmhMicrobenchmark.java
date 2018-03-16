@@ -515,7 +515,7 @@ public class JmhMicrobenchmark {
 		}
 	}
 
-	public static int getSaveTokenType_HASH_MAP(String s, boolean functionsAsKeywords) {
+	public static int getSaveTokenType_HASH_MAP(char[] s, boolean functionsAsKeywords) {
 
 		Integer integer;
 		if (functionsAsKeywords) {
@@ -551,7 +551,7 @@ public class JmhMicrobenchmark {
 	@Benchmark
 	public void switch_with_if_else(Blackhole blackhole) {
 		for (int i = 0; i < NUMBER_OF_METHOD_CALLS; i++) {
-			int result = getSaveTokenType_SWITCH_WITH_IF_ELSE(randomTestInputs.get(i), FUNCTIONS_AS_KEYWORDS_VALUE);
+			int result = getSaveTokenType_SWITCH_WITH_IF_ELSE(String.valueOf(randomTestInputs.get(i).toCharArray()), FUNCTIONS_AS_KEYWORDS_VALUE);
 			blackhole.consume(result);
 		}
 	}
@@ -559,7 +559,7 @@ public class JmhMicrobenchmark {
 	@Benchmark
 	public void switch_nested(Blackhole blackhole) {
 		for (int i = 0; i < NUMBER_OF_METHOD_CALLS; i++) {
-			int result = getSaveTokenType_SWITCH(randomTestInputs.get(i), FUNCTIONS_AS_KEYWORDS_VALUE);
+			int result = getSaveTokenType_SWITCH(String.valueOf(randomTestInputs.get(i).toCharArray()), FUNCTIONS_AS_KEYWORDS_VALUE);
 			blackhole.consume(result);
 		}
 	}
@@ -567,7 +567,7 @@ public class JmhMicrobenchmark {
 	@Benchmark
 	public void switch_simplified(Blackhole blackhole) {
 		for (int i = 0; i < NUMBER_OF_METHOD_CALLS; i++) {
-			int result = getSaveTokenType_SIMPLIFIED_SWITCH(randomTestInputs.get(i), FUNCTIONS_AS_KEYWORDS_VALUE);
+			int result = getSaveTokenType_SIMPLIFIED_SWITCH(String.valueOf(randomTestInputs.get(i).toCharArray()), FUNCTIONS_AS_KEYWORDS_VALUE);
 			blackhole.consume(result);
 		}
 	}
@@ -575,7 +575,7 @@ public class JmhMicrobenchmark {
 	@Benchmark
 	public void if_else(Blackhole blackhole) {
 		for (int i = 0; i < NUMBER_OF_METHOD_CALLS; i++) {
-			int result = getSaveTokenType_IF_ELSE(randomTestInputs.get(i), FUNCTIONS_AS_KEYWORDS_VALUE);
+			int result = getSaveTokenType_IF_ELSE(String.valueOf(randomTestInputs.get(i).toCharArray()), FUNCTIONS_AS_KEYWORDS_VALUE);
 			blackhole.consume(result);
 		}
 	}
@@ -583,7 +583,7 @@ public class JmhMicrobenchmark {
 	@Benchmark
 	public void hashMap(Blackhole blackhole) {
 		for (int i = 0; i < NUMBER_OF_METHOD_CALLS; i++) {
-			int result = getSaveTokenType_HASH_MAP(randomTestInputs.get(i), FUNCTIONS_AS_KEYWORDS_VALUE);
+			int result = getSaveTokenType_HASH_MAP(randomTestInputs.get(i).toCharArray(), FUNCTIONS_AS_KEYWORDS_VALUE);
 			blackhole.consume(result);
 		}
 	}
