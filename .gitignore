@@ -1,0 +1,23 @@
+target/
+test-output/
+
+.classpath
+.project
+.settings/
+
+*.xml.versionsBackup
+jgitflow.log
+.repository
+
+# IntelliJ files and folders
+out/
+.idea
+*.iml
+
+# SoapUI test logs
+global-groovy.log
+soapui-errors.log
+soapui.log
+
+# shade plugin
+dependency-reduced-pom.xml
